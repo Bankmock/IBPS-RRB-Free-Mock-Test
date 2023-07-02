@@ -1,0 +1,285 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #progress-bar {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    
+    #progress-bar svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg);
+    }
+    
+    #progress-bar .circle-background {
+      fill: none;
+      stroke: green;
+      stroke-width: 10;
+    }
+    
+    #progress-bar .circle-progress {
+      fill: none;
+      stroke: white;
+      stroke-width: 10;
+      
+      stroke-dasharray: 0, 251.2; /* Sets the initial progress to 0 */
+      transition: stroke-dasharray 1s ease;
+    }
+    
+    #progress-bar .score-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, sans-serif;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar">
+    <svg viewBox="0 0 100 100">
+      <circle class="circle-background" cx="50" cy="50" r="40" />
+      <circle class="circle-progress" cx="50" cy="50" r="40" />
+    </svg>
+    <div class="score-card">0%</div>
+  </div>
+  
+  <script>
+      setInterval(function() {
+        // Code to be executed every 2 seconds
+       
+    function getProgress() {
+      // Retrieve progress from ID or local storage
+      // Example: Retrieve from an input field with ID 'progress-input'
+      const inputElement = document.getElementById('progress-input');
+      if (inputElement) {
+        const progress = parseFloat(inputElement.value);
+        return isNaN(progress) ? 0 : progress;
+      }
+      
+      // Retrieve from local storage
+      const storedProgress = localStorage.getItem('progress');
+      return storedProgress ? parseFloat(storedProgress) : 0;
+    }
+    
+    function setProgress(progress) {
+      const circle = document.querySelector('#progress-bar .circle-progress');
+      const scoreCard = document.querySelector('#progress-bar .score-card');
+      const radius = circle.r.baseVal.value;
+      const circumference = radius * 2 * Math.PI;
+      const offset = circumference - progress / 100 * circumference;
+      
+      circle.style.strokeDasharray = `${offset}, ${circumference}`;
+      scoreCard.textContent = `${progress}%`;
+    }
+    
+    // Example usage:
+    
+    const progressValue = parseFloat(tmarks);
+    setProgress(progressValue); 
+    // Sets progress based on retrieved value
+    
+    
+   
+      }, 2000);
+    
+  </script>
+</body>
+</html>
+
+
+<!doctype html> 
+<html lang="en"> 
+<head>    
+<meta charset="UTF-8">    
+<title>Mock Test Summery</title> 
+<style >
+
+ html, body {
+	margin: 25px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: auto;
+	font-size: 18px;
+	 background-color: black; 
+	color: green;
+   
+}
+
+td {
+text-align:center;
+}
+
+
+</style>
+
+
+
+
+</head> 
+<body >    
+<h1>Overall Performance Summery</h1> 
+
+<table border = "1">      
+         
+       
+         
+ <tr>                <th ><h2 >not Sure/1000</h2><br> <hr><span>Rank</span</th>
+ 
+                    <th > <h2> <span id="tmarks"> </span>/80</h2> <br> <hr><span>Total Score</span> </th>
+ 
+                    <th > <h2> <span id="tcorrectanser"> </span>/80</h2> <br> <hr><span>Total Correct</span> </th>
+ 
+                    <th > <h2> <span id="tchecked"> </span>/80</h2> <br> <hr><span>Attempted</span> </th>
+ 
+ 
+ 
+ 
+ </tr> 
+  
+
+ 
+ </table>   
+
+ 
+
+<h1>Sectional Summery</h1>   
+ <table border = "1">      
+        
+        
+         
+ <tr>        
+                    <th>S. No. </th>
+                    <th>Section Name</th>
+                    <th>Attempted</th>
+                    <th>Correct Answers</th> 
+ 
+                   <th>Wrong Answers</th> 
+                   <th> Your Marks</th> 
+ </tr>            
+      
+<tr>        
+                 <td>1</td>
+                 <td>Quantitative Aptitude</td>
+                  <td><h3> <span id='qchecked'></span></h3> </td>
+                 <td><h3> <span id="qcorrectanser"></span> </h3> </td> 
+                 <td><h3><span id="qwronganser"></span> </h3>  </td> 
+                 <td>  <h3><span id="qmarks"></span> </h3>  </td> 
+ </tr>      
+          
+ <tr>        
+                 <td>2</td>
+                
+                 <td>Reasoning Ability</td>
+                 <td><h3> <span id='rchecked'></span></h3> </td>
+                 <td><h3><span id="rcorrectanser"></span>  </td>        
+                 <td><h3><span id="rwronganser"></span> </td>        
+                 <td><h3><span id="rmarks"></span>  </td>        
+ </tr>
+ 
+
+ 
+ </table>   
+<script onload> 
+
+
+let rcorrectanser = parseFloat(localStorage.getItem('rcorrectanser'), 10);
+ 
+ let  qcorrectanser = parseFloat(localStorage.getItem('qcorrectanser'), 10);
+       let tcorrectanser = (rcorrectanser) + (qcorrectanser);
+ document.getElementById("tcorrectanser").innerHTML = tcorrectanser;
+ 
+ 
+ 
+let rmarks = parseFloat(localStorage.getItem('rmarks'), 10);
+
+ let  qmarks = parseFloat(localStorage.getItem('qmarks'), 10);
+       let tmarks = (rmarks) + (qmarks);
+ localStorage.setItem('tmarks', tmarks)
+document.getElementById("tmarks").innerHTML = tmarks;
+
+
+ let rchecked = parseInt(localStorage.getItem('rchecked'), 10);
+ 
+ let qchecked = parseInt(localStorage.getItem('qchecked'), 10);
+     let tchecked = rchecked  + qchecked;
+ 
+
+document.getElementById("tchecked").innerHTML = tchecked;
+
+
+
+ document.getElementById("qchecked").innerHTML = localStorage.getItem('qchecked');
+ document.getElementById("qcorrectanser").innerHTML = localStorage.getItem('qcorrectanser');
+ document.getElementById("qwronganser").innerHTML = localStorage.getItem('qwanser');
+ document.getElementById("qmarks").innerHTML = localStorage.getItem('qmarks');
+ 
+ document.getElementById("rchecked").innerHTML = localStorage.getItem('rchecked');
+ document.getElementById("rcorrectanser").innerHTML = localStorage.getItem('rcorrectanser');
+ document.getElementById("rwronganser").innerHTML = localStorage.getItem('rwanser');
+ document.getElementById("rmarks").innerHTML = localStorage.getItem('rmarks');
+ 
+</script>
+
+<script>
+window.onbeforeunload = function() {
+
+
+return 'are you sure you want to leave this page?';
+
+};
+
+</script>
+
+
+
+
+
+
+ 
+ <script unload>
+ 
+
+  
+  localStorage.removeItem('qchecked');
+  localStorage.removeItem('qcorrectanser');
+  localStorage.removeItem('qwanser');
+  localStorage.removeItem('qmarks');
+  
+  localStorage.removeItem('rchecked');
+  localStorage.removeItem('rcorrectanser');
+  localStorage.removeItem('rwanser');
+  localStorage.removeItem('rmarks');
+  
+   
+ localStorage.removeItem('tchecked');
+  localStorage.removeItem('tcorrectanser');
+  
+  localStorage.removeItem('tmarks');
+  
+  
+</script>
+
+
+ </html>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
