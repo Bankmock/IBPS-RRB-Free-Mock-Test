@@ -1,0 +1,190 @@
+html *
+{
+-webkit-user-select:none !important;
+-moz-user-select: -moz-none !important;
+-ms-user-select: none !important;
+user-select: none !important;
+}
+
+
+ table {
+      max-width: 100%;
+      
+   border-collapse: collapse;
+     
+    }
+
+
+
+
+
+
+
+.secgen
+{
+background-color:#C7DCF0;
+display: inline-block;
+position: relative;
+margin-top:-13%;
+left:-5%;
+border:4px solid #A9D0F5;
+color:#000;
+font-size: 13px;
+height:30px;
+line-height: 30px;
+text-align: center;
+font-family: Arial,helvetica,sans-serif;
+z-index: 1;
+cursor:default;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width:100%;
+}
+.currclass
+{
+background-color:#3476BB !important;
+color:#FFF !important;	
+}
+
+
+
+
+ 
+
+
+#main-container>#left-container-post>#question-outer-pane>#button-holder
+{
+position: fixed;
+bottom:0%;
+left:0%;
+right:0%;
+height:auto;
+width:100%;
+
+vertical-align: middle;
+display: block;	
+text-align: left;
+padding-top:0.7%;
+padding-bottom:0.7%;
+max-height: 10%;
+z-index: 70;
+}
+#main-container>#left-container-post>#question-outer-pane>#button-holder>a
+{
+text-decoration: none;
+}
+
+#main-container>#left-container-post>#question-outer-pane>#button-holder>a>#clear
+{
+margin-left:0.7%;
+height:18px;
+width:150px;
+background-color: gray;
+  color: #ffffff;
+display: inline-block;
+text-align: center;
+padding:0.8% 2.5% 0.8% 2.5%;
+ 
+font-family: verdana,helvetica,sans-serif;
+font-size:13px;
+border:2px solid #A9D0F5;
+}
+#main-container>#left-container-post>#question-outer-pane>#button-holder>a>#next
+{
+text-align: right;
+height:18px;
+width:150px;
+text-align: center;
+background-color: #4CAF50;
+ color: #ffffff;
+display: inline-block;
+padding:0.8% 2.5% 0.8% 2.5%;
+font-family: verdana,helvetica,sans-serif;
+font-size:13px;
+border:4px solid #A9D0F5;
+pandding-bottom: 0px;
+float:right;
+margin-right:0.7%;
+}
+
+ #nextButton
+{
+text-align: right;
+height:26px;
+width:94px;
+text-align: center;
+background-color: #4CAF50;
+ color: #ffffff;
+display: inline-block;
+padding:0.8% 2.5% 0.8% 2.5%;
+font-family: verdana,helvetica,sans-serif;
+font-size:13px;
+border:4px solid #A9D0F5;
+pandding-bottom: 0px;
+float:right;
+margin-right:0.7%;
+}
+
+
+ #regForm {
+  background-color: #ffffff;
+  margin-top: 0px auto; 
+  font-family: Raleway;
+  width: 99%;
+  height: 99%;
+ 
+}
+ 
+ 
+ .tab {
+  display: none;
+ 
+}
+ .card {
+   
+   height: 95%; 
+   float: left;
+   font-size: 19px;
+   overflow-y: responsive;
+   flex-wrap: wrap;
+   font-family: verdana,helvetica,sans-serif;
+  overflow-x: hidden;
+  
+ 
+}
+ 
+ .cardd {
+    display: inline-block;
+    float: left;
+  width:44%;
+  height: 95%;
+   flex-wrap: wrap;
+    font-family: verdana,helvetica,sans-serif;
+   
+   font-size: 19px;
+   overflow-y: scroll auto;
+   overflow-x: hidden;
+  
+}
+ 
+#q {
+ width:99%;
+   height: 317px; 
+ 
+ 
+ }
+
+
+#start-test {
+    
+background-color: #4CAF50;
+ color: #ffffff;
+display: inline-block;
+font-family: verdana,helvetica,sans-serif;
+font-size:23px;
+border:4px solid #A9D0F5;
+pandding-bottom: 4px;
+margin: center;
+    
+}
